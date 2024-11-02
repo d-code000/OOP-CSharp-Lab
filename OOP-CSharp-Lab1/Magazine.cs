@@ -5,25 +5,25 @@ public class Magazine
     private string _name { get; set; }
     private Frequency _frequency { get; set; }
     private DateTime _releaseDate { get; set; }
-    private int _curculation { get; set; }
+    private int _circulation { get; set; }
     // m.b. change type of list
     private List<Article> _listArticle { get; set; }
 
-    public Magazine(string name, Frequency frequency, DateTime releaseDate, int curculation)
+    public Magazine(string name, Frequency frequency, DateTime releaseDate, int circulation)
     {
         _name = name;
-        this._frequency = frequency;
+        _frequency = frequency;
         _releaseDate = releaseDate;
-        _curculation = curculation;
+        _circulation = circulation;
         _listArticle = new List<Article>();
     }
 
     public Magazine()
     {
         _name = "Name";
-        this._frequency = Frequency.Weekly;
+        _frequency = Frequency.Weekly;
         _releaseDate = DateTime.Now;
-        _curculation = 0;
+        _circulation = 0;
         _listArticle = new List<Article>();
     }
 
@@ -45,10 +45,10 @@ public class Magazine
         set { _releaseDate = value; }
     }
 
-    public int Curculation
+    public int Circulation
     {
-        get { return _curculation; }
-        set { _curculation = value; }
+        get { return _circulation; }
+        set { _circulation = value; }
     }
 
     public List<Article> ListArticle
@@ -65,8 +65,36 @@ public class Magazine
             return (Enumerable.Sum(ratings) / ratings.Count);
         }
     }
-    
-    
-    
-    
+
+    public bool this[Frequency frequency]
+    {
+        get { return _frequency == frequency; }
+    }
+
+    public void AddArticles(params Article[] articles)
+    {
+        foreach (var article in articles)
+        {
+            _listArticle.Add(article);
+        }
+    }
+
+    public override string ToString()
+    {
+        string articles = _listArticle.Count > 0 ? string.Join(Environment.NewLine + "\t", _listArticle) : "No articles";
+        return $"Name: {_name} \n" +
+               $"Frequency: {_frequency} \n" +
+               $"Release date: {_releaseDate} \n" +
+               $"Circulation: {_circulation} \n" +
+               $"List of articles:\n\t{articles}";
+    }
+
+    public string ToShortString()
+    {
+        return $"Name: {_name}, " +
+               $"Frequency: {_frequency}, " +
+               $"Release date: {_releaseDate}, " +
+               $"Circulation: {_circulation}, " +
+               $"Middle rating: {MiddleRating}";
+    }
 }

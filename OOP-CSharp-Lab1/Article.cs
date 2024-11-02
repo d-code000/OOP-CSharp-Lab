@@ -22,6 +22,8 @@ public class Article
 
     public override string ToString()
     {
-        return base.ToString();
+        return $"Author: {Author.ToString()}, " +
+               $"Name: {Name}, " +
+               $"Rating: {Rating:F2}";
     }
 }

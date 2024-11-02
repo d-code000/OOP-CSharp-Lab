@@ -46,7 +46,9 @@ public class Person
 
     public override string ToString()
     {
-        return base.ToString();
+        return $"{firstName} " +
+               $"{lastName}, " +
+               $"date of birth: {dateBirth}";
     }
     
     
