@@ -1,18 +1,17 @@
-﻿using System.Diagnostics;
-using OOP_CSharp_Lab;
+﻿using OOP_CSharp_Lab;
 
 namespace OOP_CSharp_Test;
 
 public class ArticleArrayHelper
 {
     protected const int Size = 1000000; // Общее количество элементов
-    protected const int SizeHeight = 1000;
-    protected const int SizeWidth = 1000;
+    protected const int SizeHeight = 100;
+    protected const int SizeWidth = 10000;
     protected Article[] Array = new Article[Size];
     protected Article[,] RectangularArray = new Article[SizeHeight, SizeWidth];
     protected Article[][] JaggedArray = new Article[SizeHeight][];
     protected Random Random = new Random();
-    protected Stopwatch Stopwatch = new Stopwatch();
+    
     
     protected void AddArray()
     {

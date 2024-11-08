@@ -1,5 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4476c9a0_002D1788_002D4622_002D97ed_002D8e61c4cd358a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ArticleArrayTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4476c9a0_002D1788_002D4622_002D97ed_002D8e61c4cd358a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ArrayTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;MSTest::88D2F961-E68D-4CEE-A19F-E622ED256F86::net8.0::OOP_CSharp_Test.AddArticleArrayTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;MSTest::88D2F961-E68D-4CEE-A19F-E622ED256F86::net8.0::OOP_CSharp_Test.GetArticleArrayTest&lt;/TestId&gt;&#xD;

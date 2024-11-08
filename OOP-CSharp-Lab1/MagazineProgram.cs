@@ -2,7 +2,7 @@
 
 public class MagazineProgram
 {
-    public static void Main(string[] args)
+    public static void Main()
     {
         // 1
         Console.WriteLine("\n");

@@ -2,53 +2,53 @@
 
 public class Person
 {
-    private string firstName { get; set; }
-    private string lastName { get; set; }
-    private DateTime dateBirth { get; set; }
+    private string _firstName;
+    private string _lastName;
+    private DateTime _dateBirth;
 
     public Person(string firstName, string lastName, DateTime dateBirth)
     {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateBirth = dateBirth;
+        _firstName = firstName;
+        _lastName = lastName;
+        _dateBirth = dateBirth;
     }
 
     public Person()
     {
-        firstName = "Имя";
-        lastName = "Фамилия";
-        dateBirth = DateTime.Now;
+        _firstName = "Имя";
+        _lastName = "Фамилия";
+        _dateBirth = DateTime.Now;
     }
 
     public string FirstName
     {
-        get { return firstName; }
-        set { firstName = value; }
+        get { return _firstName; }
+        set { _firstName = value; }
     }
 
     public string LastName
     {
-        get { return lastName; }
-        set { lastName = value; }
+        get { return _lastName; }
+        set { _lastName = value; }
     }
 
     public DateTime DateBirth
     {
-        get { return dateBirth; }
-        set { dateBirth = value; }
+        get { return _dateBirth; }
+        set { _dateBirth = value; }
     }
 
     public int YearBirth
     {
-        get { return dateBirth.Year; }
-        set { dateBirth = dateBirth.AddYears(value); }
+        get { return _dateBirth.Year; }
+        set { _dateBirth = _dateBirth.AddYears(value); }
     }
 
     public override string ToString()
     {
-        return $"{firstName} " +
-               $"{lastName}, " +
-               $"date of birth: {dateBirth}";
+        return $"{_firstName} " +
+               $"{_lastName}, " +
+               $"date of birth: {_dateBirth}";
     }
     
     

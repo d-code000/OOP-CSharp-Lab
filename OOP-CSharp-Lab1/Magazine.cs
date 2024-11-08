@@ -2,12 +2,13 @@
 
 public class Magazine
 {
-    private string _name { get; set; }
-    private Frequency _frequency { get; set; }
-    private DateTime _releaseDate { get; set; }
-    private int _circulation { get; set; }
+    private string _name;
+    private Frequency _frequency;
+    private DateTime _releaseDate;
+
+    private int _circulation;
     // m.b. change type of list
-    private List<Article> _listArticle { get; set; }
+    private List<Article> _listArticle;
 
     public Magazine(string name, Frequency frequency, DateTime releaseDate, int circulation)
     {

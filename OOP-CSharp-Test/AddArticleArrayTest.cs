@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using OOP_CSharp_Lab;
 
 namespace OOP_CSharp_Test;
@@ -5,13 +6,13 @@ namespace OOP_CSharp_Test;
 [TestClass]
 public class AddArticleArrayTest: ArticleArrayHelper
 {
-    public TestContext TestContext { get; }
+    private Stopwatch _stopwatch = new Stopwatch();
     
     [TestInitialize]
     public void Init()
     {
         Assert.AreEqual(Size, SizeHeight * SizeWidth, "Size = SizeHeight * SizeWidth");
-        Stopwatch.Start();
+        _stopwatch.Start();
     }
 
     [TestMethod]
@@ -35,7 +36,7 @@ public class AddArticleArrayTest: ArticleArrayHelper
     [TestCleanup]
     public void GetTime()
     {
-        Stopwatch.Stop();
-        TestContext.WriteLine($"Time of test: {Stopwatch.ElapsedMilliseconds}");
+        _stopwatch.Stop();
+        Console.WriteLine($"Time of test: {_stopwatch.ElapsedMilliseconds}");
     }
 }

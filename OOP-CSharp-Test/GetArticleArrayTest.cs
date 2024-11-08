@@ -1,9 +1,11 @@
-﻿namespace OOP_CSharp_Test;
+﻿using System.Diagnostics;
+
+namespace OOP_CSharp_Test;
 
 [TestClass]
 public class GetArticleArrayTest: ArticleArrayHelper
 {
-    public TestContext TestContext { get; }
+    private Stopwatch _stopwatch = new Stopwatch();
     
     [TestInitialize]
     public void Init()
@@ -14,7 +16,7 @@ public class GetArticleArrayTest: ArticleArrayHelper
         AddRectangularArray();
         AddJaggedArray();
         
-        Stopwatch.Start();
+        _stopwatch.Start();
     }
     
     [TestMethod]
@@ -55,7 +57,7 @@ public class GetArticleArrayTest: ArticleArrayHelper
     [TestCleanup]
     public void GetTime()
     {
-        Stopwatch.Stop();
-        TestContext.WriteLine($"Time of test: {Stopwatch.ElapsedMilliseconds}");
+        _stopwatch.Stop();
+        Console.WriteLine($"Time of test: {_stopwatch.ElapsedMilliseconds}");
     }
 }

@@ -22,7 +22,7 @@ public class Article
 
     public override string ToString()
     {
-        return $"Author: {Author.ToString()}, " +
+        return $"Author: {Author}, " +
                $"Name: {Name}, " +
                $"Rating: {Rating:F2}";
     }
