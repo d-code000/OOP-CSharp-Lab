@@ -1,4 +1,4 @@
-﻿using OOP_CSharp_Lab;
+﻿using OOP_CSharp_Lab1;
 
 namespace OOP_CSharp_Test;
 
