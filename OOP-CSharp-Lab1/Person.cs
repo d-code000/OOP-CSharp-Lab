@@ -1,4 +1,4 @@
-﻿namespace OOP_CSharp_Lab;
+﻿namespace OOP_CSharp_Lab1;
 
 public class Person
 {
