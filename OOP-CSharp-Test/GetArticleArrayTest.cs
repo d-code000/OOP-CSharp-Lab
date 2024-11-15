@@ -11,17 +11,13 @@ public class GetArticleArrayTest: ArticleArrayHelper
     public void Init()
     {
         Assert.AreEqual(Size, SizeHeight * SizeWidth, "Size = SizeHeight * SizeWidth");
-        
-        AddArray();
-        AddRectangularArray();
-        AddJaggedArray();
-        
-        _stopwatch.Start();
     }
     
     [TestMethod]
     public void GetArrayTest()
     {
+        AddArray();
+        _stopwatch.Start();
         for (int i = 0; i < Size; i++)
         {
             var author = Array[i].Author;
@@ -33,6 +29,8 @@ public class GetArticleArrayTest: ArticleArrayHelper
     [TestMethod]
     public void GetRectangularArrayTest()
     {
+        AddRectangularArray();
+        _stopwatch.Start();
         for (int i = 0; i < SizeHeight; i++)
         for (int j = 0; j < SizeWidth; j++)
         {
@@ -45,6 +43,8 @@ public class GetArticleArrayTest: ArticleArrayHelper
     [TestMethod]
     public void GetJaggedArrayTest()
     {
+        AddJaggedArray();
+        _stopwatch.Start();
         for (int i = 0; i < SizeHeight; i++)
         for (int j = 0; j < SizeWidth; j++)
         {

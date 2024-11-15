@@ -2,9 +2,9 @@
 
 public class Article
 {
-    public Person Author;
-    public string Name;
-    public double Rating;
+    public Person Author { get; set; }
+    public string Name { get; set; }
+    public double Rating { get; set; }
 
     public Article(Person author, string name, double rating)
     {

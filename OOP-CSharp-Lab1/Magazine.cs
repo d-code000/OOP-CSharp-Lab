@@ -5,7 +5,6 @@ public class Magazine
     private string _name;
     private Frequency _frequency;
     private DateTime _releaseDate;
-
     private int _circulation;
     // m.b. change type of list
     private List<Article> _listArticle;
@@ -43,13 +42,13 @@ public class Magazine
     public DateTime ReleaseDate
     {
         get { return _releaseDate; }
-        set { _releaseDate = value; }
+        set { _releaseDate = (value <= DateTime.Now) ? value : DateTime.Now; }
     }
 
     public int Circulation
     {
         get { return _circulation; }
-        set { _circulation = value; }
+        set { _circulation = value > 0 ? value : 1; }
     }
 
     public List<Article> ListArticle
@@ -58,12 +57,12 @@ public class Magazine
         set { _listArticle = value; }
     }
 
-    public double MiddleRating
+    public double AverageRating
     {
         get
         {
             List<double> ratings = _listArticle.Select(x => x.Rating).ToList();
-            return (Enumerable.Sum(ratings) / ratings.Count);
+            return (ratings.Sum() / ratings.Count);
         }
     }
 
@@ -72,6 +71,7 @@ public class Magazine
         get { return _frequency == frequency; }
     }
 
+    // see usage, params restruct args Article to Article[]
     public void AddArticles(params Article[] articles)
     {
         foreach (var article in articles)
@@ -96,6 +96,6 @@ public class Magazine
                $"Frequency: {_frequency}, " +
                $"Release date: {_releaseDate}, " +
                $"Circulation: {_circulation}, " +
-               $"Middle rating: {MiddleRating}";
+               $"Middle rating: {AverageRating}";
     }
 }

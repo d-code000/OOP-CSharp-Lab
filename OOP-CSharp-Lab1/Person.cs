@@ -35,13 +35,13 @@ public class Person
     public DateTime DateBirth
     {
         get { return _dateBirth; }
-        set { _dateBirth = value; }
+        set { _dateBirth = (value <= DateTime.Now) ? value : DateTime.Now; }
     }
 
     public int YearBirth
     {
         get { return _dateBirth.Year; }
-        set { _dateBirth = _dateBirth.AddYears(value); }
+        set { _dateBirth = value <= DateTime.Now.Year ? _dateBirth.AddYears(value - _dateBirth.Year) : DateTime.Now; }
     }
 
     public override string ToString()

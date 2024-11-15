@@ -7,7 +7,7 @@ public class MagazineProgram
         // 1
         Console.WriteLine("\n");
         var magazine = new Magazine();
-        Console.WriteLine(magazine.ToString());
+        Console.WriteLine(magazine);
         Console.WriteLine("\n");
         
         // 2
@@ -39,7 +39,7 @@ public class MagazineProgram
                 rating: 8.1
             )
         };
-        Console.WriteLine(magazine.ToString());
+        Console.WriteLine(magazine);
         Console.WriteLine("\n");
         
         // 4
@@ -59,6 +59,6 @@ public class MagazineProgram
                 name: "A8 and 2B",
                 rating: 7.4
             ));
-        Console.WriteLine(magazine.ToString());
+        Console.WriteLine(magazine);
     }
 }
