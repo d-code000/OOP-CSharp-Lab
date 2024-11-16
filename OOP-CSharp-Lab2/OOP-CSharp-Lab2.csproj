@@ -8,4 +8,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\OOP-CSharp-Lab1\OOP-CSharp-Lab1.csproj" />
+    </ItemGroup>
+
 </Project>
