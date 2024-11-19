@@ -1,6 +1,6 @@
-﻿namespace OOP_CSharp_Lab1;
+﻿namespace RandomGame;
 
-public class RandomGame
+public class Program
 {
     public static void Main(string[] args)
     {
