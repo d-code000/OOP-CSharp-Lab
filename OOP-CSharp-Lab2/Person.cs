@@ -2,6 +2,19 @@
 
 public class Person: OOP_CSharp_Lab1.Person
 {
+    public Person(string firstName, string lastName, DateTime dateBirth)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        DateBirth = dateBirth;
+    }
+
+    public Person()
+    {
+        FirstName = "Имя";
+        LastName = "Фамилия";
+        DateBirth = DateTime.Now;
+    }
     
     public override bool Equals(object? obj)
     {

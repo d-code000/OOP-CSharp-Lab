@@ -71,24 +71,24 @@ public class Magazine: Edition, IRateAndCopy
         var articleString = "";
         foreach (Person redactor in _editor)
         {
-            redactorString += redactor + ", ";
+            redactorString += redactor + "; ";
         }
 
         foreach (var article in _article)
         {
-            articleString += article + " ";
+            articleString += article + "; ";
         }
 
         return $"{ToShortString()}\n" +
                $"Redactors: {redactorString}\n" +
-               $"Article {articleString}\n";
+               $"Articles: {articleString}\n";
     }
 
     public virtual string ToShortString()
     {
         return $"{base.ToString()}\n" +
-               $"Average rating: {AverageRating}\n" +
-               $"Period: {_period}";
+               $"Average rating: {AverageRating:F2}\n" +
+               $"Period: {_period}\n";
     }
 
     public new virtual object DeepCopy()
@@ -110,5 +110,48 @@ public class Magazine: Edition, IRateAndCopy
         copy.Article = articleList;
 
         return copy;
+    }
+
+    public Edition Edition
+    {
+        get => base.DeepCopy();
+        set
+        {
+            NameProperty = value.NameProperty;
+            ReleaseDateProperty = value.ReleaseDateProperty;
+            CirculationProperty = value.CirculationProperty;
+        }
+    }
+
+    public ArrayList this[double border]
+    {
+        get
+        {
+            var newArticle = new ArrayList();
+            foreach (Article article in _article)
+            {
+                if (article.Rating >= border)
+                {
+                    newArticle.Add(article);
+                }
+            }
+            return newArticle;
+        }
+    }
+
+    public ArrayList this[string name]
+    {
+        get
+        {
+            var newArticle = new ArrayList();
+            foreach (Article article in _article)
+            {
+                if (article.Name.Contains(name))
+                {
+                    newArticle.Add(article);
+                }
+            }
+            return newArticle;
+        }
     }
 }

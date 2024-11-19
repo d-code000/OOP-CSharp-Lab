@@ -43,7 +43,7 @@ public class Edition
         set
         {
             if (value < 0)
-                throw new FormatException("Тираж не может быть отрицительным");
+                throw new FormatException("Тираж не может быть отрицательным");
             Circulation = value;
         }
     }
