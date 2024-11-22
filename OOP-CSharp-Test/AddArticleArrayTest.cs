@@ -1,11 +1,11 @@
 using System.Diagnostics;
-using OOP_CSharp_Lab1;
 
 namespace OOP_CSharp_Test;
 
 [TestClass]
 public class AddArticleArrayTest: ArticleArrayHelper
 {
+    private const int LongTest = 10;
     private Stopwatch _stopwatch = new Stopwatch();
     
     [TestInitialize]
@@ -18,19 +18,28 @@ public class AddArticleArrayTest: ArticleArrayHelper
     [TestMethod]
     public void AddArrayTest()
     {
-        AddArray();
+        for (int none = 0; none < LongTest; none++)
+        {
+            AddArray();
+        }
     }
     
     [TestMethod]
     public void AddRectangularArrayTest()
     {
-        AddRectangularArray();
+        for (int none = 0; none < LongTest; none++)
+        {
+            AddRectangularArray();
+        }
     }
     
     [TestMethod]
     public void AddJaggedArrayTest()
     {
-        AddJaggedArray();
+        for (int none = 0; none < LongTest; none++)
+        {
+            AddJaggedArray();
+        }
     }
 
     [TestCleanup]

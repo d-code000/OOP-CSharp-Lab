@@ -5,6 +5,7 @@ namespace OOP_CSharp_Test;
 [TestClass]
 public class GetArticleArrayTest: ArticleArrayHelper
 {
+    private const int LongTest = 100;
     private Stopwatch _stopwatch = new Stopwatch();
     
     [TestInitialize]
@@ -18,11 +19,14 @@ public class GetArticleArrayTest: ArticleArrayHelper
     {
         AddArray();
         _stopwatch.Start();
-        for (int i = 0; i < Size; i++)
+        for (int none = 0; none < LongTest; none++)
         {
-            var author = Array[i].Author;
-            var name = Array[i].Name;
-            var rating = Array[i].Rating;
+            for (int i = 0; i < Size; i++)
+            {
+                var author = Array[i].Author;
+                var name = Array[i].Name;
+                var rating = Array[i].Rating;
+            }
         }
     }
     
@@ -31,12 +35,15 @@ public class GetArticleArrayTest: ArticleArrayHelper
     {
         AddRectangularArray();
         _stopwatch.Start();
-        for (int i = 0; i < SizeHeight; i++)
-        for (int j = 0; j < SizeWidth; j++)
+        for (int none = 0; none < LongTest; none++)
         {
-            var author = RectangularArray[i, j].Author;
-            var name = RectangularArray[i, j].Name;
-            var rating = RectangularArray[i, j].Rating;
+            for (int i = 0; i < SizeHeight; i++)
+            for (int j = 0; j < SizeWidth; j++)
+            {
+                var author = RectangularArray[i, j].Author;
+                var name = RectangularArray[i, j].Name;
+                var rating = RectangularArray[i, j].Rating;
+            }
         }
     }
     
@@ -45,12 +52,15 @@ public class GetArticleArrayTest: ArticleArrayHelper
     {
         AddJaggedArray();
         _stopwatch.Start();
-        for (int i = 0; i < SizeHeight; i++)
-        for (int j = 0; j < SizeWidth; j++)
+        for (int none = 0; none < LongTest; none++)
         {
-            var author = JaggedArray[i][j].Author;
-            var name = JaggedArray[i][j].Name;
-            var rating = JaggedArray[i][j].Rating;
+            for (int i = 0; i < SizeHeight; i++)
+            for (int j = 0; j < SizeWidth; j++)
+            {
+                var author = JaggedArray[i][j].Author;
+                var name = JaggedArray[i][j].Name;
+                var rating = JaggedArray[i][j].Rating;
+            }
         }
     }
     

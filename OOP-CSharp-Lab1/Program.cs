@@ -1,6 +1,6 @@
 ﻿namespace OOP_CSharp_Lab1;
 
-public class MagazineProgram
+public class Program
 {
     public static void Main()
     {

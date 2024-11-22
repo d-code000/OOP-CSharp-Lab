@@ -6,7 +6,6 @@
         <RootNamespace>OOP_CSharp_Lab1</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <StartupObject>OOP_CSharp_Lab1.MagazineProgram</StartupObject>
     </PropertyGroup>
 
 </Project>
