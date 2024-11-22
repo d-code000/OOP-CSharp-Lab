@@ -32,7 +32,7 @@ public class Program
         Console.WriteLine("3 ---");
         var magazine = new Magazine(
             "Foo", OOP_CSharp_Lab1.Frequency.Monthly,
-            new DateTime(2300, 3, 8), 100000, 8);
+            new DateTime(2010, 3, 8), 100000, 8);
         
         magazine.AddArticles(
             new Article(new Person(), "FooBoo", 4.8),
@@ -67,7 +67,7 @@ public class Program
         
         // 6
         Console.WriteLine("6 ---");
-        foreach (var article in magazine[5])
+        foreach (var article in magazine.GetMoreArticle(5))
         {
             Console.WriteLine(article);
         }
@@ -75,7 +75,7 @@ public class Program
         
         // 7
         Console.WriteLine("7 ---");
-        foreach (var article in magazine["Foo"])
+        foreach (var article in magazine.GetNameArticles("Foo"))
         {
             Console.WriteLine(article);
         }

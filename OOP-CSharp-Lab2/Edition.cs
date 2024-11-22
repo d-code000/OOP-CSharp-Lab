@@ -4,7 +4,7 @@ public class Edition
 {
     // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/accessibility-levels
     // Доступ ограничен содержащим классом или типами, производными от содержащего класса
-    
+
     protected string Name;
     protected DateTime ReleaseDate;
     protected int Circulation;
@@ -50,21 +50,13 @@ public class Edition
             Circulation = value;
         }
     }
-    
+
     // https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords
-    public virtual Edition DeepCopy()
-    {
-        Edition copy = new Edition(
-            new string(Name), 
-            ReleaseDate, 
-            Circulation
-            );
-        return copy;
-    }
+    public virtual Edition DeepCopy() => new Edition(new string(Name), ReleaseDate, Circulation);
 
     public override bool Equals(object? obj)
     {
-        if (obj == null || (obj is not Edition edition))
+        if (obj is not Edition edition)
             return false;
         return (
             Name == edition.Name &&

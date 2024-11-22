@@ -127,36 +127,28 @@ public class Magazine: Edition, IRateAndCopy
             CirculationProperty = value.CirculationProperty;
         }
     }
+    
+    // https://learn.microsoft.com/ru-ru/dotnet/csharp/iterators
 
-    public ArrayList this[double border]
+    public IEnumerable<Article> GetMoreArticle(double border)
     {
-        get
+        foreach (Article article in _article)
         {
-            var newArticle = new ArrayList();
-            foreach (Article article in _article)
+            if (article.Rating >= border)
             {
-                if (article.Rating >= border)
-                {
-                    newArticle.Add(article);
-                }
+                yield return article;
             }
-            return newArticle;
         }
     }
 
-    public ArrayList this[string name]
+    public IEnumerable<Article> GetNameArticles(string name)
     {
-        get
+        foreach (Article article in _article)
         {
-            var newArticle = new ArrayList();
-            foreach (Article article in _article)
+            if (article.Name.Contains(name))
             {
-                if (article.Name.Contains(name))
-                {
-                    newArticle.Add(article);
-                }
+                yield return article;
             }
-            return newArticle;
         }
     }
 }

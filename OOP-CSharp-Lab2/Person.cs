@@ -21,7 +21,7 @@ public class Person: OOP_CSharp_Lab1.Person
         // [?] - m. b. null 
         // [Person person] - деконструкция: переменной person присваивается значение obj, приведённое к типу Person
         
-        if (obj == null || (obj is not Person person))
+        if (obj is not Person person)
             return false;
         return (
             FirstName == person.FirstName &&
