@@ -32,7 +32,7 @@ public class Program
         Console.WriteLine("3 ---");
         var magazine = new Magazine(
             "Foo", OOP_CSharp_Lab1.Frequency.Monthly,
-            new DateTime(2300, 3, 8), 100000);
+            new DateTime(2300, 3, 8), 100000, 8);
         
         magazine.AddArticles(
             new Article(new Person(), "FooBoo", 4.8),

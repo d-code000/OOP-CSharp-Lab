@@ -9,12 +9,15 @@ public class Magazine: Edition, IRateAndCopy
     private ArrayList _article;
     public double Rating { get; }
 
-    public Magazine(string name,  OOP_CSharp_Lab1.Frequency period, DateTime releaseDate, int circulation)
+    public Magazine(string name,  OOP_CSharp_Lab1.Frequency period, DateTime releaseDate, int circulation, double rating)
         : base(name, releaseDate, circulation)
     {
         _period = period;
         _editor = new ArrayList();
         _article = new ArrayList();
+        if (rating < 0) Rating = 0;
+        else if (rating > 10) Rating = 10;
+        else Rating = rating;
     }
 
     public Magazine() : base()
@@ -22,6 +25,7 @@ public class Magazine: Edition, IRateAndCopy
         _period = OOP_CSharp_Lab1.Frequency.Weekly;
         _editor = new ArrayList();
         _article = new ArrayList();
+        Rating = 0;
     }
     
     public double AverageRating
@@ -88,12 +92,13 @@ public class Magazine: Edition, IRateAndCopy
     {
         return $"{base.ToString()}\n" +
                $"Average rating: {AverageRating:F2}\n" +
-               $"Period: {_period}\n";
+               $"Period: {_period}\n" +
+               $"Rating: {Rating}\n";
     }
 
     public new virtual object DeepCopy()
     {
-        var copy = new Magazine(NameProperty, _period, ReleaseDateProperty, CirculationProperty);
+        var copy = new Magazine(NameProperty, _period, ReleaseDateProperty, CirculationProperty, Rating);
         var editorList = new ArrayList();
         var articleList = new ArrayList();
         foreach (Person editor in _editor)

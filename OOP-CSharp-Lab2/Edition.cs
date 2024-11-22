@@ -2,6 +2,9 @@
 
 public class Edition
 {
+    // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/accessibility-levels
+    // Доступ ограничен содержащим классом или типами, производными от содержащего класса
+    
     protected string Name;
     protected DateTime ReleaseDate;
     protected int Circulation;
@@ -9,13 +12,13 @@ public class Edition
     public Edition(string name, DateTime releaseDate, int circulation)
     {
         Name = name;
-        ReleaseDate = releaseDate;
-        Circulation = circulation;
+        ReleaseDateProperty = releaseDate;
+        CirculationProperty = circulation;
     }
 
     public Edition()
     {
-        Name = "Name:";
+        Name = "Name";
         ReleaseDate = DateTime.Now;
         Circulation = 0;
     }
@@ -48,6 +51,7 @@ public class Edition
         }
     }
     
+    // https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords
     public virtual Edition DeepCopy()
     {
         Edition copy = new Edition(

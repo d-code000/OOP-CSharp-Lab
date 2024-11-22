@@ -1,7 +1,8 @@
 ﻿namespace OOP_CSharp_Lab2;
 
-public interface IRateAndCopy
+// https://learn.microsoft.com/ru-ru/dotnet/csharp/fundamentals/types/interfaces
+public interface IRateAndCopy // ? добавить IRateAndCopy<T>
 {
     double Rating { get; }
-    object DeepCopy();
+    object DeepCopy(); // и сделать T DeepCopy()
 }
