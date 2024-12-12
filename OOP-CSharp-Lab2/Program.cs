@@ -35,8 +35,8 @@ public class Program
             new DateTime(2010, 3, 8), 100000, 8);
         
         magazine.AddArticles(
-            new Article(new Person(), "FooBoo", 4.8),
-            new Article(new Person(), "BooFoo", 5),
+            new Article(new Person("Foo", "Boo", new DateTime(2000, 4, 3)), "FooBoo", 4.8),
+            new Article(new Person("Foo", "Foo", new DateTime(2000, 4, 3)), "BooFoo", 5),
             new Article(new Person(), "BooBoo", 7.8)
             );
         magazine.AddEditors(
@@ -78,6 +78,30 @@ public class Program
         foreach (var article in magazine.GetNameArticles("Foo"))
         {
             Console.WriteLine(article);
+        }
+        Console.WriteLine();
+        
+        // 8
+        Console.WriteLine("8 ---");
+        foreach (var article in magazine)
+        {
+            Console.WriteLine(article);
+        }
+        Console.WriteLine();
+        
+        // 9
+        Console.WriteLine("9 ---");
+        foreach (var article in magazine.GetAuthorIsEditorArticles())
+        {
+            Console.WriteLine(article);
+        }
+        Console.WriteLine();
+        
+        // 10
+        Console.WriteLine("10 ---");
+        foreach (var editor in magazine.GetEditorNotAuthorEditors())
+        {
+            Console.WriteLine(editor);
         }
         Console.WriteLine();
     }

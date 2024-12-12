@@ -2,7 +2,7 @@
 
 namespace OOP_CSharp_Lab2;
 
-public class Magazine: Edition, IRateAndCopy
+public class Magazine: Edition, IRateAndCopy, IEnumerable
 {
     private OOP_CSharp_Lab1.Frequency _period;
     private ArrayList _editor;
@@ -146,9 +146,45 @@ public class Magazine: Edition, IRateAndCopy
         foreach (Article article in _article)
         {
             if (article.Name.Contains(name))
-            {
                 yield return article;
-            }
         }
+    }
+
+    public IEnumerable<Article> GetAuthorIsEditorArticles()
+    {
+        foreach (Article article in _article)
+        {
+            if (_editor.Contains(article.Author)) 
+                yield return article;
+        }
+    }
+
+    public IEnumerable<Person> GetEditorNotAuthorEditors()
+    {
+        foreach (Person editor in _editor)
+        {
+            bool flagNotAuthor = false;
+            foreach (Article article in _article)
+            {
+                if (article.Author == editor)
+                {
+                    flagNotAuthor = true;
+                    break;
+                }
+            }
+
+            if (!flagNotAuthor) yield return editor;
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+
+    public MagazineEnumerator GetEnumerator()
+    {
+        // https://learn.microsoft.com/ru-ru/dotnet/api/system.collections.ienumerable?view=net-8.0
+        return new MagazineEnumerator(this);
     }
 }
