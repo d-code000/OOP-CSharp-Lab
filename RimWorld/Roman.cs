@@ -2,7 +2,7 @@
 
 public class Roman
 {
-    private const int _maxRange = 3999;
+    private const int MaxRange = 3999;
     private static Dictionary<string, int> _supportSym = new Dictionary<string, int>
     {
         {"I", 1},
@@ -20,8 +20,8 @@ public class Roman
         get => _num;
         set
         {
-            if (Math.Abs(value) > _maxRange) 
-                throw new ArgumentOutOfRangeException($"Support range: abs(num) < {_maxRange}");
+            if (Math.Abs(value) > MaxRange) 
+                throw new ArgumentOutOfRangeException($"Support range: abs(num) < {MaxRange}");
             _num = value;
         }
     }
@@ -31,7 +31,9 @@ public class Roman
         var max = 0;
         for (int i = romanNum.Length; i >= 0; i++)
         {
-            var nowDecSym = _supportSym[romanNum[i]];
+            var nowDecSym = _supportSym[romanNum[i].ToString()]
+
+        ;
             if (nowDecSym < max)
             {
                 Num -= nowDecSym;
